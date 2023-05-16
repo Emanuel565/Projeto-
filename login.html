@@ -35,6 +35,7 @@
                 if (result === 'Sucesso') {
                     // Redirecionar o usuário para a página de login
                     window.location = 'index.php';
+                    document.querySelector('#result').classList.add('sucess')
                 }
             } catch (error) {
                 // Registrar o erro no console, caso ocorra um erro ao enviar o formulário

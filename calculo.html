@@ -9,16 +9,41 @@
 <body>
 
     
-	<form id="form-calculo" method="POST" action="./system/simulador.php">
+	<form id="form-calculo" >
 		<h1>Simulador de Empréstimo</h1>
 		<label for="valor">Valor do Empréstimo:</label>
 		<input type="number" name="valor" id="valor" required><br><br>
 		<label for="taxa">Taxa de Juros:</label>
-		<input type="number" name="taxa" id="taxa" value="1.89" required><br><br>
+		<input type="text" name="taxa" id="taxa" value="1.89" disabled ><br><br>
 		<label for="prazo">Prazo de Pagamento (em anos):</label>
-		<input type="number" name="prazo" id="prazo" max="4" required><br><br>
+		<input type="number" name="prazo" id="prazo" max="10" required><br><br>
 		<input type="submit" value="Simular">
+		<a href="./system/logout.php">Sair</a>
+
 	</form>
+
+	<div class="simulador" id="result"></div>
+
+	
+
+
+
+	<script src="js/async.js"></script>
+    <script>
+         // Função assíncrona anônima para executar o código que chama submitForm()
+         (async () => {
+            // Enviar o formulário e aguardar a resolução da promessa retornada por submitForm
+            try {
+                const result = await submitForm('./system/simulador.php', 'form-calculo', 'result');
+                    document.querySelector('#result').classList.add('sucess')
+                    document.querySelector('.simulador').style.display="block"
+                
+            } catch (error) {
+                // Registrar o erro no console, caso ocorra um erro ao enviar o formulário
+                console.error('Erro ao enviar o formulário:', error);
+            }
+        })(); // Executar a função assíncrona anônima imediatamente
+    </script>
 
 
     
