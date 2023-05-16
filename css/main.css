@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #000000;
+    color: #0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 50px;
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #0d0d0d;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 3px;
+}
+input:focus{
+    color: #495057 ;
+    outline: 0 ;
+    box-shadow: 0 0 0 0.2rem #00ff001b ;
+}
+input[type="submit"] {
+    cursor: pointer;
+    background-color: #0f0;
+    color: #0d0d0d;
+    margin: 10px 0;
+}
+
+input[type="submit"]:hover {
+    background-color: #0d0d0d;
+    color: #0f0;
+    border: 1px solid #0f0;
+}
+
+#result {
+    color: red;
+    font-size: 12px;
+}
+
+.register {
+    font-size: 12px !important;
+}
+
+.register a {
+    color: #7b7b7b;
+}
+
+.register a:hover {
+    color: #0f0;
+}
+
+/*matrix*/
+canvas {
+    display: none;
+}
+
+/*texto animado*/
+#demo {
+    width: max-content;
+    height: 16px;
+    position: relative;
+    /* Isto é necessário para posicionar corretamente o ::before */
+}
+
+#demo::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid transparent;
+    animation: blink .9s infinite;
+}
+
+@keyframes blink {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: inherit;
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
+.banco{
+    background-color: #0d0d0d;
+    color: #0f0;
+    border: 1px solid #0f0; 
+    width: auto;
+    height: auto; 
+    font-size: 60px; 
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 100px;
+    border-radius: 10%;
+}
+
+.banco2 {
+    background-color: #0d0d0d;
+    color: #0f0;
+    border: 1px solid #0f0; 
+    width: auto;
+    height: auto; 
+    font-size: 50px; 
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 10px;
+    border-radius: 0%;  
+}
+#form-calculo {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+animation-name: onLoadCalculo;
+animation-delay: 10s;
+animation-duration: 1s;
+animation-fill-mode: forwards;
+opacity: 0;
+
+}
+
+@keyframes onLoadCalculo {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1 class="banco">Banco <br> Emprees</h1>
+    <div class="login-container">
+        <form id="form-login">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password">
+            </div>
+        <div id="result"></div>
+        <input type="submit" value="Entrar">
+        <div class="register">Não está registrado? <a href="register.html">registre-se</a></div>
+        </form>
+    </div>
+    <script src="js/async.js"></script>
+    <script>
+         // Função assíncrona anônima para executar o código que chama submitForm()
+         (async () => {
+            // Enviar o formulário e aguardar a resolução da promessa retornada por submitForm
+            try {
+                const result = await submitForm('./system/login.php', 'form-login', 'result');
+                // Verificar se o resultado é igual a 'Sucesso'
+                if (result === 'Sucesso') {
+                    // Redirecionar o usuário para a página de login
+                    window.location = 'index.php';
+                }
+            } catch (error) {
+                // Registrar o erro no console, caso ocorra um erro ao enviar o formulário
+                console.error('Erro ao enviar o formulário:', error);
+            }
+        })(); // Executar a função assíncrona anônima imediatamente
+    </script>
+</body>
+</html>
