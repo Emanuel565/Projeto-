@@ -162,3 +162,17 @@ opacity: 0;
       opacity: 1;
     }
   }
+
+  .simulador {
+    background-color: #0d0d0d;
+    color: #0f0;
+    border: 1px solid #0f0; 
+    width: auto;
+    height: auto; 
+    font-size: 30px; 
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 250px;
+    border-radius: 0%;  
+  }
